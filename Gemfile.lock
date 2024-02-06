@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    commonmarker (0.23.10)
+    github-markup (4.0.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  commonmarker (~> 0.23.5)
+  github-markup (~> 4.0)
+
+BUNDLED WITH
+   2.4.22

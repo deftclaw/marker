@@ -1,0 +1,85 @@
+:root {
+  --deep-gray: #1D1F21;
+  --deep-green: #062909;
+  --deep-purple: #1A0820;
+  --green: #026228;
+  --ivory: #FFF5CC;
+  --light-green: #26E06D;
+  --silver: #678472;
+}
+
+body {
+  background-color: var(--deep-gray);
+  padding: 1.7em;
+}
+em {
+  color: var(--silver);
+  font-family: "Victor Mono";
+}
+h1 {
+  color: var(--light-green);
+  font-family: "Iosevka NFM";
+  font-size: 54px;
+  font-weight: 500;
+}
+h2 {
+  color: var(--light-green);
+  font-family: "Iosevka Term Slab";
+  font-size: 36px;
+  font-weight: 400;
+}
+h3 {
+  color: var(--green);
+  font-family: "Iosevka NFM";
+  font-size: 18px;
+}
+h4 {
+  color: var(--green);
+}
+hr {
+  border: 1px solid var(--deep-purple);
+}
+img {
+  border-radius: 8px;
+  margin: 1em;
+  max-width: 600px;
+}
+img.large {
+  border-radius: 8px;
+  margin: 1em;
+  max-width: 900px;
+}
+li {
+  color: var(--ivory);
+  font-family: "Lilex";
+}
+li code {
+  background-color: var(--silver);
+  border-radius: 4px;
+  color: var(--deep-purple);
+  font-family: "TerminessTTF NFM";
+  padding: 0.1em;
+}
+p {
+  color: var(--ivory);
+  font-family: "Lilex";
+}
+p code {
+  background-color: var(--silver);
+  border-radius: 4px;
+  color: var(--deep-purple);
+  font-family: "TerminessTTF NFM";
+  padding: 0.1em;
+}
+pre {
+  background-color: var(--silver);
+  border-radius: 4px;
+  color: var(--deep-purple);
+  font-family: "TerminessTTF NFM";
+  line-height: 1.2;
+  padding: 0.5em;
+}
+strong {
+  color: var(--ivory);
+  font-family: "Lilex";
+}

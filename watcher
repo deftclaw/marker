@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. /etc/profile.d/01reply.sh
+
+declare -A SHA
+
+while [ true ]
+do
+  for md in $(ls ${DIR:-.}/*.md)
+  do
+    lieu=`echo ${md%.md}|awk -F'/' '{print $NF}'`
+    lsha=$(sha256sum $md|awk '{print $1}')
+    
+    if [[ "$lsha" != "${SHA[\"$lieu\"]}" ]] 
+    then
+      ps -ae|grep surf >/dev/null && pkill surf
+      ruby marker.rb
+      surf ${md%.md}.html &>/dev/null & 
+      SHA[\"$lieu\"]=$lsha
+      export SHA
+    else reply -c "$md unchanged"
+    fi
+  done
+  
+  sleep 3
+done

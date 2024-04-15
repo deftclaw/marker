@@ -8,12 +8,19 @@
   --silver: #678472;
 }
 
+a {
+  color: var(--ivory);
+  font-size: 60%;
+  position: relative;
+  text-decoration: none;
+  top: -0.9em;
+}
+
 body {
   background-color: var(--deep-gray);
   padding: 1.7em;
 }
 em {
-  color: var(--silver);
   font-family: "Victor Mono";
 }
 h1 {

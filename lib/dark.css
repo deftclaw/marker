@@ -49,6 +49,10 @@ img.large {
   margin: 1em;
   max-width: 900px;
 }
+label {
+  color: var(--ivory);
+  font-family: "Lilex";
+}
 li {
   color: var(--ivory);
   font-family: "Lilex";

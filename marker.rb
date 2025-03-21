@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 ## frozen_string_literal: true
 
+list_md = ->{ Dir.children('.').select { |l| l.end_with? '.md' } }
+themes  = ->{ Dir.children('lib').select{|l| l.match(/css$/)}.map{|n| n.split('.')[0]} }
+
 def convert(file:, style:)
   require 'commonmarker'
   require 'github/markup'
@@ -20,20 +23,12 @@ def convert(file:, style:)
   puts page_name
 end
 
-def list_md
-  Dir.children('.').select { |l| l.end_with? '.md' }
-end
-
-def themes
-  Dir.children('lib').select{|l| l.match(/css$/)}.map{|n| n.split('.')[0]}
-end
-
 case ARGV.count
 when 0
-  list_md.each{ |md| convert file: md, style: 'default' }
+  list_md.call.each{ |md| convert file: md, style: 'default' }
 when 1
-  if themes.include? ARGV[0]
-    list_md.each{ |md| convert file: md, style: ARGV[0] }
+  if themes.call.include? ARGV[0]
+    list_md.call.each{ |md| convert file: md, style: ARGV[0] }
   else
     convert file: ARGV[0], style: 'default'
   end
